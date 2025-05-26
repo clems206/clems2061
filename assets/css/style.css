@@ -1,0 +1,724 @@
+/* General Body & HTML Reset */
+/* Couleurs basées sur le logo: #343a40 (gris foncé) et #A0B26E (vert-olive) */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.6;
+    color: #343a40; /* Texte principal foncé - reprend le gris du logo */
+    background-color: #f8f9fa; /* Fond clair */
+    overflow-x: hidden; /* Empêche le défilement horizontal indésirable */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+a {
+    text-decoration: none;
+    color: #A0B26E; /* Vert-olive du logo pour les liens */
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #343a40; /* Au survol, le lien prend la couleur du texte/titre principal */
+}
+
+ul {
+    list-style: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+    color: #343a40; /* Utilise le gris foncé du logo pour les titres */
+    margin-bottom: 15px;
+}
+
+p {
+    margin-bottom: 15px;
+}
+
+/* Header */
+.header {
+    background: #212529; /* Fond sombre */
+    color: #f8f9fa; /* Texte clair pour fonds sombres */
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo a {
+    color: #f8f9fa;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.8em;
+    font-weight: 700;
+}
+
+.main-nav {
+    /* Par défaut, afficher le menu sur les grands écrans */
+    display: block;
+}
+
+.main-nav ul {
+    display: flex;
+    gap: 25px;
+}
+
+.main-nav a {
+    color: #f8f9fa;
+    font-weight: 600;
+    padding: 5px 0;
+    position: relative;
+}
+
+.main-nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: #A0B26E; /* Vert-olive du logo */
+    left: 0;
+    bottom: -5px;
+    transition: width 0.3s ease-in-out;
+}
+
+.main-nav a:hover::after,
+.main-nav a.active::after {
+    width: 100%;
+}
+
+.nav-toggle {
+    display: none; /* Masqué sur les grands écrans par défaut */
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.nav-toggle .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #f8f9fa;
+    margin: 5px 0;
+    transition: all 0.3s ease;
+}
+
+/* Hero Section */
+.hero-section {
+    /* Garde cette image de placeholder pour l'instant, à remplacer par une image stylisée */
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://via.placeholder.com/1500x800/007bff/ffffff?text=Votre+Image+Hero+3D') no-repeat center center/cover;
+    color: #f8f9fa; /* Texte clair pour fonds sombres */
+    text-align: center;
+    padding: 150px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 60vh; /* Minimum height for better appearance */
+}
+
+.hero-section h2 {
+    font-size: 3.5em;
+    margin-bottom: 20px;
+    color: #f8f9fa; /* Couleur du texte sur fond sombre */
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+}
+
+.hero-section p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+    max-width: 700px;
+    color: #f8f9fa; /* Couleur du texte sur fond sombre */
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+}
+
+/* Styles de base pour TOUS les boutons */
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+/* Styles spécifiques pour le bouton primaire */
+.primary-btn {
+    background-color: #b1c43d; /* Vert bouton */
+    color: #f9f9f9; /* Texte blanc */
+    border: 2px solid #b1c43d; /* Bordure assortie */
+}
+
+.primary-btn:hover {
+    background-color: #a0b907; /* Vert bouton foncé au survol */
+    border-color: #a0b907; /* Bordure foncée au survol */
+}
+
+/* Styles spécifiques pour le bouton secondaire (si vous souhaitez en avoir un différent) */
+.secondary-btn {
+    background-color: #343a40; /* Gris foncé du logo */
+    color: #f9f9f9; /* Texte blanc */
+    border: 2px solid #343a40; /* Bordure assortie */
+}
+
+.secondary-btn:hover {
+    background-color: #2a2e32; /* Gris foncé légèrement plus foncé au survol */
+    border-color: #2a2e32; /* Bordure foncée au survol */
+}
+
+
+/* Sections communes */
+section {
+    padding: 80px 0;
+    text-align: center;
+}
+
+.about-section {
+    background-color: #f8f9fa; /* Fond clair */
+    color: #343a40;
+}
+
+.about-section h3 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+}
+
+.about-section p {
+    max-width: 800px;
+    margin: 0 auto 30px auto;
+    font-size: 1.1em;
+}
+
+.services-section {
+    background-color: #212529; /* Fond sombre */
+    color: #f8f9fa;
+}
+
+.services-section h3 {
+    color: #f8f9fa;
+    font-size: 2.5em;
+    margin-bottom: 40px;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.service-item {
+    background-color: #343a40; /* Un peu plus clair que le dark-bg, mais toujours sombre */
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.service-item:hover {
+    transform: translateY(-10px);
+    background-color: #495057;
+}
+
+.service-icon {
+    font-size: 3em;
+    color: #A0B26E; /* Icônes en vert-olive */
+    margin-bottom: 20px;
+}
+
+.service-item h4 {
+    font-size: 1.5em;
+    color: #f8f9fa;
+    margin-bottom: 10px;
+}
+
+.service-item p {
+    color: #f8f9fa;
+    font-size: 0.95em;
+}
+
+.cta-section {
+    /* Garde cette image de placeholder pour l'instant */
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://via.placeholder.com/1500x500/6c757d/ffffff?text=Background+CTA') no-repeat center center/cover;
+    color: #f8f9fa;
+    padding: 100px 20px;
+    text-align: center;
+}
+
+.cta-section h2 {
+    font-size: 3em;
+    margin-bottom: 30px;
+    color: #f8f9fa;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+}
+
+/* Footer */
+.footer {
+    background-color: #212529; /* Fond sombre */
+    color: #f8f9fa;
+    padding: 30px 0;
+    text-align: center;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.footer .social-links a {
+    color: #f8f9fa;
+    font-size: 1.5em;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+.footer .social-links a:hover {
+    color: #A0B26E; /* Liens sociaux en vert-olive au survol */
+}
+
+/* Devis Section (Specific styles for devis.php) */
+.devis-section {
+    padding: 80px 0;
+    background-color: #f8f9fa;
+}
+
+.devis-section h2 {
+    text-align: center;
+    font-size: 2.8em;
+    margin-bottom: 10px;
+    color: #343a40; /* Titre du formulaire en gris foncé */
+}
+
+.devis-section .section-subtitle {
+    text-align: center;
+    font-size: 1.1em;
+    color: #343a40;
+    margin-bottom: 40px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.devis-form {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.devis-form fieldset {
+    border: 1px solid #dee2e6; /* Couleur des bordures */
+    border-radius: 8px;
+    padding: 30px;
+    margin-bottom: 30px;
+}
+
+.devis-form legend {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.6em;
+    font-weight: 600;
+    color: #A0B26E; /* Légende en vert-olive */
+    padding: 0 10px;
+    margin-left: -10px;
+    background-color: #fff; /* Pour qu'il ressorte du fieldset */
+}
+
+.form-group {
+    margin-bottom: 20px;
+    position: relative; /* Pour le compteur de caractères */
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #343a40;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group input[type="number"],
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1em;
+    color: #343a40;
+    background-color: #fcfcfc;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group input[type="tel"]:focus,
+.form-group input[type="number"]:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #A0B26E; /* Bordure active en vert-olive */
+    box-shadow: 0 0 0 3px rgba(160, 178, 110, 0.25); /* Ombre de focus semi-transparente en vert-olive */
+    outline: none;
+}
+
+.form-group textarea {
+    resize: vertical; /* Permet de redimensionner verticalement */
+    min-height: 100px;
+}
+
+.form-group small {
+    display: block;
+    color: #666;
+    font-size: 0.85em;
+    margin-top: 5px;
+}
+
+/* Specific styles for new elements in devis form */
+.char-count {
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 0.8em;
+    color: #343a40; /* Default color, will be red if over limit by JS */
+    margin-top: 0px;
+    padding-right: 15px;
+}
+
+.approx-price {
+    font-weight: bold;
+    color: #dc3545; /* Red color for price */
+    font-size: 1.5em;
+    display: block;
+    margin-top: 10px;
+}
+
+/* Hide conditional fields by default */
+.conditional-field {
+    display: none;
+}
+
+
+.form-actions {
+    text-align: center;
+    margin-top: 40px;
+}
+
+/* Contact Section */
+.contact-section {
+    padding: 80px 0;
+    background-color: #f8f9fa; /* Fond clair */
+}
+
+.contact-section h2 {
+    text-align: center;
+    font-size: 2.8em;
+    margin-bottom: 10px;
+    color: #343a40; /* Titre en gris foncé */
+}
+
+.contact-section .section-subtitle {
+    text-align: center;
+    font-size: 1.1em;
+    color: #343a40;
+    margin-bottom: 40px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr; /* Colonne infos, Colonne formulaire */
+    gap: 60px;
+    max-width: 1000px;
+    margin: 0 auto 60px auto;
+    align-items: flex-start; /* Aligner les éléments en haut */
+}
+
+.contact-info {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    text-align: left;
+}
+
+.contact-info h3 {
+    color: #A0B26E; /* Vert-olive du logo */
+    font-size: 1.8em;
+    margin-bottom: 25px;
+}
+
+.contact-info p {
+    margin-bottom: 15px;
+    color: #343a40;
+    font-size: 1em;
+}
+
+.contact-info p strong {
+    color: #212529; /* Gris plus foncé pour les labels */
+}
+
+.contact-info a {
+    color: #A0B26E; /* Liens email/tel en vert-olive */
+}
+
+/* Nouveau style pour la carte intégrée dans la section contact-info */
+.map-container-inline {
+    margin-top: 30px; /* Espace la carte des coordonnées */
+    background-color: #ffffff; /* S'assure que le fond reste blanc */
+    padding-top: 0px; /* Pas de padding supérieur si la carte est le premier élément dedans */
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+    border-radius: 8px; /* Hérite du parent contact-info, mais peut être explicite */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08); /* Ou pas d'ombre si vous préférez que ça fonde */
+    text-align: center;
+    overflow: hidden; /* Assure que les coins arrondis de l'iframe sont coupés */
+}
+
+.map-container-inline h3 {
+    color: #A0B26E; /* Vert-olive du logo */
+    font-size: 1.5em; /* Un peu plus petit que le titre de la section contact-info */
+    margin-bottom: 15px; /* Espace sous le titre de la carte */
+    padding-top: 20px; /* Espace au-dessus du titre de la carte */
+}
+
+.map-container-inline iframe {
+    border-radius: 8px; /* Pour que la carte ait les coins arrondis */
+    width: calc(100% + 0px); /* Pour compenser le padding si vous en mettez sur .map-container-inline */
+    height: 300px; /* Hauteur réduite ici */
+    display: block; /* Supprime l'espace en bas de l'iframe */
+    margin: 0; /* Assure aucune marge autour de l'iframe */
+}
+
+/* Styles pour aligner Nom et Prénom sur la même ligne dans le formulaire de contact */
+.contact-form .form-group-inline {
+    display: flex;
+    gap: 20px; /* Espace entre les deux champs */
+    margin-bottom: 20px;
+}
+
+.contact-form .form-group-inline .form-group {
+    flex: 1; /* Chaque champ prendra la moitié de l'espace disponible */
+    margin-bottom: 0; /* Pas de marge en bas ici, car c'est géré par le parent */
+}
+
+
+/* Responsive Design */
+/* Règles pour les écrans de taille moyenne (tablettes, petits ordinateurs portables) */
+@media (max-width: 992px) {
+    /* En-tête : les éléments s'enroulent si nécessaire */
+    .header .container {
+        flex-wrap: wrap;
+    }
+
+    /* Menu de navigation mobile (initialement caché) */
+    .main-nav {
+        flex-basis: 100%; /* Prend toute la largeur sur mobile */
+        max-height: 0; /* Initialement masqué */
+        overflow: hidden; /* Cache le contenu qui dépasse */
+        transition: max-height 0.4s ease-in-out; /* Animation douce */
+        background-color: #212529; /* Fond du menu quand ouvert */
+        padding: 0; /* Réinitialiser le padding de base */
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    /* Menu de navigation mobile (quand le bouton est actif) */
+    .main-nav.active {
+        max-height: 400px; /* Hauteur suffisante pour afficher tous les liens. Ajuster si plus de liens */
+        padding: 20px 0; /* Espacement interne quand ouvert */
+    }
+
+    /* Liste des liens de navigation en colonne */
+    .main-nav ul {
+        flex-direction: column;
+        align-items: center; /* Centrer les liens */
+        gap: 15px; /* Espacement entre les liens */
+    }
+
+    .main-nav li {
+        margin-bottom: 0; /* Supprime la marge bottom redondante */
+    }
+
+    .nav-toggle {
+        display: block; /* Affiche le bouton burger sur mobile */
+    }
+
+    /* Animation du bouton burger */
+    .nav-toggle.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .nav-toggle.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .nav-toggle.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    /* Sections générales */
+    section {
+        padding: 60px 0; /* Moins de padding sur mobile */
+    }
+
+    .hero-section {
+        padding: 100px 20px; /* Ajustement du padding du hero */
+    }
+
+    .hero-section h2 {
+        font-size: 2.5em; /* Taille de titre ajustée */
+    }
+
+    .hero-section p {
+        font-size: 1.1em; /* Taille de paragraphe ajustée */
+    }
+
+    /* Grille de services en une seule colonne */
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cta-section {
+        padding: 80px 20px; /* Ajustement du padding du CTA */
+    }
+
+    .cta-section h2 {
+        font-size: 2.5em; /* Taille de titre ajustée */
+    }
+
+    /* Formulaires (devis, contact) */
+    .devis-form {
+        padding: 30px;
+    }
+
+    .devis-form fieldset {
+        padding: 20px;
+    }
+
+    .devis-form legend {
+        font-size: 1.4em;
+    }
+
+    .char-count {
+        position: static; /* Supprime le positionnement absolu */
+        display: block; /* Prend toute la largeur */
+        text-align: right;
+        margin-top: 5px; /* Ajoute un peu d'espace */
+        padding-right: 0; /* Réinitialise le padding droit */
+    }
+
+    /* Grille de contact en une seule colonne */
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+}
+
+/* Règles pour les très petits écrans (smartphones) */
+@media (max-width: 576px) {
+    .hero-section h2 {
+        font-size: 2em;
+    }
+
+    .hero-section p {
+        font-size: 1em;
+    }
+
+    .btn {
+        padding: 10px 20px;
+        font-size: 0.9em;
+    }
+
+    .service-item {
+        padding: 20px;
+    }
+
+    .service-icon {
+        font-size: 2.5em;
+    }
+
+    .service-item h4 {
+        font-size: 1.2em;
+    }
+
+    /* Formulaires (devis, contact) */
+    .devis-form {
+        padding: 20px;
+    }
+
+    .devis-form fieldset {
+        padding: 15px;
+    }
+
+    .devis-form legend {
+        font-size: 1.2em;
+    }
+
+    /* Contact spécifique */
+    .contact-info,
+    .contact-form-container,
+    .map-container-inline {
+        padding: 20px;
+    }
+
+    .contact-info h3,
+    .contact-form-container h3,
+    .map-container-inline h3 {
+        font-size: 1.5em;
+    }
+
+    /* Nom et Prénom empilés sur les très petits écrans */
+    .contact-form .form-group-inline {
+        flex-direction: column;
+        gap: 0;
+    }
+    .contact-form .form-group-inline .form-group {
+        margin-bottom: 15px; /* Espacement entre Nom et Prénom */
+    }
+
+    /* Carte sur mobile */
+    .map-container-inline {
+        margin-top: 20px; /* Moins d'espace sur mobile */
+    }
+    .map-container-inline h3 {
+        font-size: 1.3em;
+    }
+    .map-container-inline iframe {
+        height: 250px; /* Encore plus petite sur mobile */
+    }
+}
+
+/* Vous pouvez ajouter un breakpoint plus fin si nécessaire pour des tailles d'écran très petites */
+@media (max-width: 375px) {
+    .hero-section h2 {
+        font-size: 1.8em;
+    }
+    .hero-section p {
+        font-size: 0.85em;
+    }
+    .cta-section h2 {
+        font-size: 1.8em;
+    }
+}
